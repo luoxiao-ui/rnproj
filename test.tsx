@@ -1,4 +1,4 @@
-import { ActivityIndicator, FlatList, Text, View } from 'react-native';
+import { FlatList, Text, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 const Test = () => {
@@ -7,7 +7,8 @@ const Test = () => {
     <FlatList
       data={Array.from({ length: 100 })}
       keyExtractor={(item, index) => index.toString()}
-      refreshControl={<ActivityIndicator />}
+      refreshing={false}
+      onRefresh={()=> {}}
       renderItem={()=> {
         return <View style={{ width: '100%', height: 40, justifyContent: 'center', alignItems: 'center' }}>
           <Text>暂无数据</Text>
